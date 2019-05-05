@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="right-down" width="32" height="32" tilewidth="16" tileheight="16" infinite="0" nextlayerid="20" nextobjectid="1">
+ <tileset firstgid="1" name="roguelikeSheet_transparent" tilewidth="16" tileheight="16" spacing="1" tilecount="1767" columns="57">
+  <image source="roguelikeSheet_transparent.png" width="968" height="526"/>
+ </tileset>
+ <layer id="13" name="Walls" width="32" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztk1sKgCAQRSXXWvTYYa9dlb8VFEF4L45kQsyB+RHHy8gZYxRFUW6mwpiB1FzI+1CPj2W/21pcK8hwpG8R5pcWVwMyOtIjzWdUIKO28W/G3k3xZu585FeIx2gHnCAf+RXiMdqdjrjxBPkV4jHaHeamhJD8lOTOZ25KPYuBuSn1LAbm5pueIfrzn30c52Pi/7/m9/HF/Iqi/IcN7U1d2Q==
+  </data>
+ </layer>
+ <layer id="9" name="Floor" width="32" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztk1sKwyAQRQdda0rbbKDdWh/ZlfE3ESr98V6coC3IHJifkOGgHEUMwzC+vJ3Ik8zi9Htop0TY/716PCtwRLIXlP7J47kAx0x2tP674DkBx9njnZb+G5kR/Kiv3DHzozcQFX7UV+6Y+dHbSW3WgvqaKv2ozRbU+Hvybz9rU9vZEVib2s6OwNps2Rni8bnnEun7q/P95/OX+MX5DcMYhw1z84dA
+  </data>
+ </layer>
+ <layer id="10" name="Carpet" width="32" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJzt07ENgDAMRFGLpAX2Yi3GALYCAtuQ0koREyFc/Sddd8oVVkQAAMBbSxBZVbbgu7/nvUPldN7vo8igMkbffW9T92/fMje+19pHXXnPlP/bpXKHev+r8p7WPvcHYHkABicTgA==
+  </data>
+ </layer>
+ <layer id="11" name="Objects" width="32" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjILBBSwYGRjmAulTDBCaAYkmBB4zQuhIII4g0/5CqBnMjAgxdSYEewEOGgZkgVgOiskBTQTkb+Kgu7Go7SPTDcSAZUzYxQ8DcSYjdjliACH/EwOkgFiCCubgAvuRMLXBfAJ8EDgGxMeB2BIazl041GPTSwjcIMAHgQNIGJ9+bHpHwdAFuNITOemMHICcnhRxiI+CUTAKRsEowA8AERMdsA==
+  </data>
+ </layer>
+ <layer id="12" name="Details" width="32" height="32" locked="1">
+  <data encoding="base64" compression="zlib">
+   eJztzqEBACAMwLABZ3AjT3D5JGZ+iMTUNgLgP3vU5Tmz+6B2V/cBAACVBEDzAUk=
+  </data>
+ </layer>
+ <layer id="19" name="Collisions" width="32" height="32" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjAIEWMZGGJOjj5r2k4OHmv3kuo9U87Cpp1Qtup3U9D855lAz/rGpI0Yvre2nV/qntf8JuY0S+eFgP7XiedT+UftHwSgYBSMXAAAJXX2l
+  </data>
+ </layer>
+</map>
