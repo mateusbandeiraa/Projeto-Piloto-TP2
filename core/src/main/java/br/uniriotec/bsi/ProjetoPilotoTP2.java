@@ -23,7 +23,7 @@ public class ProjetoPilotoTP2 extends BasicGame {
 
 	@Override
 	public void update(float delta) {
-
+		jogador.update(delta);
 	}
 
 	@Override
