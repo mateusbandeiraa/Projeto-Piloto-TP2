@@ -7,6 +7,7 @@ import org.mini2Dx.core.graphics.Graphics;
 import org.mini2Dx.tiled.TiledMap;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Texture;
 
 public class ProjetoPilotoTP2 extends BasicGame {
@@ -14,7 +15,10 @@ public class ProjetoPilotoTP2 extends BasicGame {
 
 	private TiledMap mapa;
 	private Personagem jogador;
+	private NPC npc;
 	private ArrayList<Arvore> arvores;
+	private HUD hud;
+	private boolean jaExibiuDialogo = false;
 
 	@Override
 	public void initialise() {
@@ -22,6 +26,7 @@ public class ProjetoPilotoTP2 extends BasicGame {
 		TiledMap.STRICT_LAYER_VISIBILITY = true;
 
 		jogador = new Personagem(new Texture("tankDesert.png"), 128f, 0, 32f, 32f);
+		npc = new NPC(400f, 50f, 32f, 32f);
 
 		arvores = new ArrayList<Arvore>();
 		arvores.add(new Arvore(128f, 64f, 16, 16));
@@ -32,6 +37,8 @@ public class ProjetoPilotoTP2 extends BasicGame {
 		arvores.add(new Arvore(75f, 20f, 16, 16));
 		arvores.add(new Arvore(98f, 55f, 16, 16));
 		arvores.add(new Arvore(260f, 78f, 16, 16));
+
+		hud = new HUD();
 	}
 
 	@Override
@@ -42,6 +49,20 @@ public class ProjetoPilotoTP2 extends BasicGame {
 				a.morrer();
 			}
 		}
+		npc.update(delta);
+
+		if (hud.estaMostrandoDialogo()) {
+			if (Gdx.input.isKeyJustPressed(Keys.A)) {
+				jaExibiuDialogo = !hud.proximaFala();
+			}
+		} else if (npc.estaColidindo(jogador)) {
+			if (!jaExibiuDialogo && !hud.estaMostrandoDialogo()) {
+				hud.iniciarDialogo();
+			}
+		} else {
+			jaExibiuDialogo = false;
+		}
+		hud.update(delta);
 	}
 
 	@Override
@@ -74,6 +95,9 @@ public class ProjetoPilotoTP2 extends BasicGame {
 		for (Arvore a : arvores) {
 			a.render(g);
 		}
+		npc.render(g);
 		jogador.render(g);
+
+		hud.render(g);
 	}
 }
