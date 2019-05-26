@@ -62,6 +62,14 @@ public class ProjetoPilotoTP2 extends BasicGame {
 		} else {
 			jaExibiuDialogo = false;
 		}
+		
+		if(Gdx.input.isKeyJustPressed(Keys.TAB)) {
+			if(!hud.estaMostrandoInventario()) {
+				hud.mostrarInventario(jogador.getItens());
+			} else {
+				hud.encerrarInventario();
+			}
+		}
 		hud.update(delta);
 	}
 

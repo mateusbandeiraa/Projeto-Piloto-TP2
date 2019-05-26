@@ -1,5 +1,7 @@
 package br.uniriotec.bsi;
 
+import java.util.ArrayList;
+
 import org.mini2Dx.core.graphics.Graphics;
 import org.mini2Dx.core.graphics.Sprite;
 
@@ -9,11 +11,18 @@ import com.badlogic.gdx.graphics.Texture;
 
 public class Personagem {
 	protected Sprite sprite;
+	protected ArrayList<Item> itens;
+	protected float forcaAtaqueBase = 10;
+	protected float forcaDefesaBase = 5;
 
 	public Personagem(Texture texture, float x, float y, float width, float height) {
 		this.sprite = new Sprite(texture);
 		sprite.setPosition(x, y);
 		sprite.setSize(width, height);
+		
+		this.itens = new ArrayList<>();
+		itens.add(new ItemAtaque());
+		itens.add(new itemDefesa());
 	}
 
 	public void render(Graphics g) {
@@ -54,5 +63,25 @@ public class Personagem {
 		 * 
 		 * @formatter:on
 		 */
+	}
+
+	public ArrayList<Item> getItens() {
+		return itens;
+	}
+	
+	public float calcularForcaAtaque() {
+		float ataque = forcaAtaqueBase;
+		for(Item i : itens) {
+			ataque += i.bonusAtaque();
+		}
+		return ataque;
+	}
+	
+	public float calcularForcaDefesa() {
+		float defesa = forcaDefesaBase;
+		for(Item i : itens) {
+			defesa += i.bonusDefesa();
+		}
+		return defesa;
 	}
 }
