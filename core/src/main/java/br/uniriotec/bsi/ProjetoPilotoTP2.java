@@ -38,8 +38,7 @@ public class ProjetoPilotoTP2 extends BasicGame {
 	public void update(float delta) {
 		jogador.update(delta);
 		for (Arvore a : arvores) {
-			if ((Math.abs(a.sprite.getX() - jogador.sprite.getX()) < 16)
-					&& (Math.abs(a.sprite.getY() - jogador.sprite.getY()) < 16)) {
+			if (a.estaColidindo(jogador)) {
 				a.morrer();
 			}
 		}
