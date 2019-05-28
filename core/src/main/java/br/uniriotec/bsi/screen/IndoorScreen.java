@@ -20,7 +20,8 @@ import br.uniriotec.bsi.Personagem;
 public class IndoorScreen extends BasicGameScreen {
 	public static int ID = 1;
 
-	private TiledMap mapa;
+	private TiledMap mapaTiles;
+	private Mapa mapa = Mapa.CASA_INDOOR;
 	private Personagem jogador;
 	private NPC npc;
 	private ArrayList<Arvore> arvores;
@@ -28,7 +29,7 @@ public class IndoorScreen extends BasicGameScreen {
 	private boolean jaExibiuDialogo = false;
 
 	public void initialise(GameContainer gc) {
-		mapa = new TiledMap(Gdx.files.internal("mapa.tmx"));
+		mapaTiles = new TiledMap(Gdx.files.internal(mapa.arquivo));
 		TiledMap.STRICT_LAYER_VISIBILITY = true;
 
 		jogador = new Personagem(new Texture("tankDesert.png"), 128f, 0, 32f, 32f);
@@ -82,7 +83,7 @@ public class IndoorScreen extends BasicGameScreen {
 	}
 
 	public void render(GameContainer gc, Graphics g) {
-		mapa.draw(g, 0, 0);
+		mapaTiles.draw(g, 0, 0);
 		/*
 		 * @formatter:off
 		 * TODO:
