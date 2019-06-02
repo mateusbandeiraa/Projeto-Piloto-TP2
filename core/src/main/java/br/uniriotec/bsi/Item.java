@@ -3,9 +3,20 @@ package br.uniriotec.bsi;
 import org.mini2Dx.core.graphics.Graphics;
 import org.mini2Dx.core.graphics.Sprite;
 
-public abstract class Item {
+import com.badlogic.gdx.graphics.Texture;
+
+public class Item {
 	protected String nome;
 	protected Sprite sprite;
+	protected float bonusAtaque;
+	protected float bonusDefesa;
+
+	public Item(String nome, float bonusAtaque, float bonusDefesa, Texture textura) {
+		this.nome = nome;
+		this.bonusAtaque = bonusAtaque;
+		this.bonusDefesa = bonusDefesa;
+		this.sprite = new Sprite(textura);
+	}
 
 	public void render(Graphics g) {
 		g.drawSprite(sprite);
@@ -18,12 +29,12 @@ public abstract class Item {
 	public String getNome() {
 		return nome;
 	}
-	
+
 	public float bonusAtaque() {
-		return 0f;
+		return this.bonusAtaque;
 	}
-	
+
 	public float bonusDefesa() {
-		return 0f;
+		return this.bonusDefesa;
 	}
 }

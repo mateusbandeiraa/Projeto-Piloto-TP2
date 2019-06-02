@@ -21,8 +21,8 @@ public class Personagem {
 		sprite.setSize(width, height);
 		
 		this.itens = new ArrayList<>();
-		itens.add(new ItemAtaque());
-		itens.add(new itemDefesa());
+		itens.add(new Item("Orbe Ataque", 1.2f, 0, TexturasItens.ATAQUE.textura));
+		itens.add(new Item("Orbe Defesa", 0, 1.4f, TexturasItens.DEFESA.textura));
 	}
 
 	public void render(Graphics g) {
